@@ -64,14 +64,7 @@ public class CustomerInfoService {
 		allCustomer.setCustomerList(listCustomer);
 		return allCustomer;
 	}
-	
-	
-	
-	
-	
-	
 
-	
 	
 	@RequestMapping(value = "/receiveCustomerJson", method = RequestMethod.POST)
 	public ResponseEntity<Response> receiveCustomerJson(@RequestBody Customer customer){
