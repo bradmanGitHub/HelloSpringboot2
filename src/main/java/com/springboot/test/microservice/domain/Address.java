@@ -54,6 +54,12 @@ public class Address {
 		this.postCode = postCode;
 	}
 	
+	@Override
+	public String toString() {
+		return "Address [homeNo=" + homeNo + ", village=" + village + ", road=" + road + ", tambon=" + tambon
+				+ ", amphur=" + amphur + ", provice=" + provice + ", postCode=" + postCode + "]";
+	}
 	
+		
 
 }

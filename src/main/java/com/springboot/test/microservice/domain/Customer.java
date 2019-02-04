@@ -1,31 +1,39 @@
 package com.springboot.test.microservice.domain;
 
 public class Customer {
-	
+
 	private String firstName;
 	private String lastName;
 	private Address address;
-	
-	//------ below code can be skip when using lombok na ^^ --
+
+	// ------ below code can be skip when using lombok na ^^ --
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public Address getAddress() {
 		return address;
 	}
+
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + "]";
+	}
 
 }

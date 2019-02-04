@@ -3,12 +3,17 @@ package com.springboot.test.microservice;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.test.microservice.domain.Address;
 import com.springboot.test.microservice.domain.Customer;
 import com.springboot.test.microservice.domain.CustomerList;
+import com.springboot.test.microservice.domain.Response;
 
 @RestController
 public class CustomerInfoService {
@@ -59,5 +64,54 @@ public class CustomerInfoService {
 		allCustomer.setCustomerList(listCustomer);
 		return allCustomer;
 	}
+	
+	
+	
+	
+	
+	
+
+	
+	
+	@RequestMapping(value = "/receiveCustomerJson", method = RequestMethod.POST)
+	public ResponseEntity<Response> receiveCustomerJson(@RequestBody Customer customer){
+		
+		System.out.println("\n==============[INPUT DATA]==================");
+		System.out.println(customer.toString());
+		
+		Response response = new Response();
+		response.setStatus("success");
+		response.setMessage("Process done without-error");
+		
+		return new ResponseEntity<Response>(response, HttpStatus.OK);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
