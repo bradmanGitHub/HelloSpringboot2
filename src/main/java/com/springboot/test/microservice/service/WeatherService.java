@@ -15,6 +15,13 @@ public class WeatherService {
 	}
 	
 	public Weather getAir3ThaiPM25RestCall(){
+		
+		try {
+			Thread.sleep(5000l);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		return this.restTemplate.getForObject("http://air4thai.pcd.go.th/services/getNewAQI_JSON.php?stationID=59t", Weather.class);
 	}
 }
