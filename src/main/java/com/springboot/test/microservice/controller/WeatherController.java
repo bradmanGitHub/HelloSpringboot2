@@ -21,9 +21,15 @@ public class WeatherController {
 
 	@Autowired
 	WeatherService weatherService;
+	
+	@RequestMapping(value = "/getpm25", method = RequestMethod.GET)
+	public ResponseEntity<Weather> getUserDataFromAnotherRest() {
+		Weather weather = weatherService.getAir3ThaiPM25RestCall();
+		return new ResponseEntity<Weather>(weather, HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/getpm25Sync", method = RequestMethod.GET)
-	public ResponseEntity<Weather> getUserDataFromAnotherRest() {
+	public ResponseEntity<Weather> getUserDataFromAnotherRestSync() {
 		Weather weather = weatherService.getAir3ThaiPM25RestCall();
 		return new ResponseEntity<Weather>(weather, HttpStatus.OK);
 	}
